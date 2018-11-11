@@ -1,0 +1,63 @@
+#logging:
+#  level:
+#    root: debug
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/fosmos?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  http:
+    multipart:
+      enable: false
+  devtools:
+    restart:
+      enabled: true
+#    url: jdbc:oracle:thin:@//localhost:1521/orcl
+#    username: c##zd
+#    password: c##zd
+#    driverClassName: oracle.jdbc.driver.OracleDriver
+#  cache:
+#    type: ehcache
+
+
+#mybatis-plus v3.0.5 configuration
+mybatis-plus:
+  #单独的单独的 MyBatis 配置
+  #config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.fosmos.domain
+  type-aliases-super-type: com.fosmos.domain.BaseEntity
+  #通常用于自定义类型转换
+  #type-handlers-package: com.baomidou.mybatisplus.samples.quickstart.handler
+  type-enums-package: com.fosmos.domain.enums
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #lazy-loading-enabled: true
+    #aggressive-lazy-loading: true
+  global-config:
+    refresh: true
+    #sql-parser-cache: true
+    db-config:
+      #数据库大写下划线转换
+      #capital-mode: true
+      db-type: mysql
+      id-type: uuid
+      table-prefix: core_,mp_
+      #逻辑删除配置（下面3个配置）
+      #logic-delete-value: 0
+      #logic-not-delete-value: 1
+      field-strategy: default

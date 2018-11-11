@@ -1,0 +1,66 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://localhost:8081/api/contract
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+    "cur":1,
+    "size": 20,
+    "order": "ctra_no",
+    "params": {
+        "ctra_no": "",
+        "legal_entity": "航天一院"
+    }
+}
+
+
+###
+POST http://localhost:8081/api/contract/save
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "id":null,
+    "ctraNo":"8089",
+    "ctraName":"8080",
+    "projLeader":"808",
+    "legalEntity":"8080",
+    "signDate":"",
+    "projType":null,
+    "techField":"0",
+    "projStartDate":"",
+    "projEvalDate":"",
+    "evalScore":null,
+    "funds":null,
+    "fundsApprRate":null,
+    "achivType":null,
+    "achivDetials":null
+}
+
+###
+POST http://localhost:8081/api/contract/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+36b54c0bf1424e7db43719feefff1c67
+###
+
+POST http://localhost:8081/api/inst-stat/getInstCntByArea
+
+###
+
+GET http://localhost:8081/api/tmpl/down
+#Accept: */*
+#Cache-Control: no-cache
+#Content-Type: application/octet-stream
+
+###
+
